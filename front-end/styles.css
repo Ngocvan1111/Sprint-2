@@ -118,4 +118,17 @@ img{
     position: relative;
     background: #f16c52;
 }
+.element-slider-left{
+    height: 50px;
+    background-color: #282121;
+    padding: 0 15px;
+}
+.element-slider-left > p {
+    line-height: 50px;
+    color: white;
+}
+.element-slider-left:hover p{
+    color: #f16c52;
+    cursor: pointer;
+}
 
