@@ -1,0 +1,134 @@
+
+.center{
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.logo{
+  height: 100%;
+}
+.search{
+  height: 100%;
+}
+.header-right{
+  height: 100%;
+
+}
+a {
+  text-decoration: none;
+}
+.main_product{
+  min-height: 275px;
+}
+.product-thumbnail{
+  position: relative;
+  overflow: hidden;
+  padding: 10px;
+}
+img{
+  max-height: 100%;
+  max-width: 100%;
+}
+.product-info{
+  padding: 10px 0 20px;
+  position: relative;
+  text-align: center;
+}
+.price-box{
+  color: #eb7058;
+  line-height: 27px;
+  display: block;
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 5px;
+  font-family: Arial,sans-serif;
+}
+.compare-price{
+  text-decoration: line-through;
+  font-size: 14px;
+  color: #adadad;
+  font-weight: 400;
+  margin-right: 10px;
+}
+.product-name{
+  padding: 0;
+  line-height: 24px;
+  text-decoration: none;
+  font-size: 14px;
+  margin: 0 0 10px;
+  font-weight: 300;
+  color: #898989;
+  word-wrap: break-word;
+  white-space: -moz-pre-wrap;
+}
+.banner_slide{
+  margin-top: 30px;
+  padding: 0 15px
+}
+.image_hover{
+  position: relative;
+}
+.image_hover:before{
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  transition: all 0.5s ease-in-out;
+}
+.box_service{
+  padding: 28px 21px;
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow:0 0 7px rgb(0 0 0);
+}
+.image_service{
+  float: left;
+  height: 70px;
+  width: 70px;
+  margin-right: 15px;
+  text-align: center;
+}
+.content_service{
+  width: calc(100% - 85px);
+  float: left;
+  text-align: left;
+}
+.title_service{
+  font-size: 15px;
+  line-height: 18px;
+  color: #333333;
+  text-transform: uppercase;
+  margin: 0;
+  font-family: Arial,sans-serif;
+  font-weight: 600;
+}
+.des_service{
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 25px;
+  margin: 0;
+  font-family: Arial,sans-serif;
+  display: block;
+}
+.title_module_main{
+  color: white;
+  position: relative;
+  background: #f16c52;
+}
+.element-slider-left{
+  height: 50px;
+  background-color: #282121;
+  padding: 0 15px;
+}
+.element-slider-left > p {
+  line-height: 50px;
+  color: white;
+}
+.element-slider-left:hover p{
+  color: #f16c52;
+  cursor: pointer;
+}
+

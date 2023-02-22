@@ -1,0 +1,26 @@
+body{
+  font-size: 14px;
+  color: #898989;
+}
+.container-content{
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+.product-thumbnail{
+  position: relative;
+  overflow: hidden;
+  padding: 10px;
+}
+img{
+  max-height: 100%;
+  max-width: 100%;
+}
+.price-box{
+  color: #eb7058;
+  line-height: 27px;
+  font-size: 16px;
+  font-weight: 700;
+  font-family: Arial,sans-serif;
+}
