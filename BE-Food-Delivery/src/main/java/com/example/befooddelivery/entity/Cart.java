@@ -3,6 +3,7 @@ package com.example.befooddelivery.entity;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Builder
 @Setter
@@ -16,9 +17,8 @@ public class Cart {
     private Long idCart;
     private int quantity;
     private String status;
-    @OneToOne()
-    @JoinColumn(name = "food_item_id",referencedColumnName = "idFood")
-    private FoodItem foodItem;
+    @OneToMany()
+    private Set<Food> food;
     @OneToOne()
     @JoinColumn(name = "customer_id", referencedColumnName = "idCustomer")
     private Customer customer;

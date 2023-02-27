@@ -19,6 +19,7 @@ a {
 }
 .main_product{
   min-height: 275px;
+  position: relative;
 }
 .product-thumbnail{
   position: relative;
@@ -133,5 +134,20 @@ img{
   color: #f16c52;
   cursor: pointer;
 }
-
+.km{
+  display: inline-block;
+  position: absolute;
+  background-image: url(//bizweb.dktcdn.net/100/068/166/themes/880372/assets/ic-sale.png?1665385921840);
+  background-repeat: no-repeat;
+  padding: 0;
+  text-align: center;
+  width: 45px;
+  height: 45px;
+  line-height: 42px;
+  border-radius: 50%;
+  margin: 4px 0 0 0;
+  right: 10px;
+  top: 10px;
+  z-index: 7;
+}
 

@@ -3,13 +3,14 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
-import { LoginComponent } from './login/login.component';
-import { CartComponent } from './cart/cart.component';
-import { DetailComponent } from './detail/detail.component';
-import { ProductComponent } from './product/product.component';
+import { HomeComponent } from './teamplate/home/home.component';
+import { HeaderComponent } from './teamplate/header/header.component';
+import { FooterComponent } from './teamplate/footer/footer.component';
+import { LoginComponent } from './teamplate/login/login.component';
+import { CartComponent } from './teamplate/cart/cart.component';
+import { DetailComponent } from './teamplate/detail/detail.component';
+import { ProductComponent } from './teamplate/product/product.component';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -20,11 +21,13 @@ import { ProductComponent } from './product/product.component';
     LoginComponent,
     CartComponent,
     DetailComponent,
-    ProductComponent
+    ProductComponent,
+
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

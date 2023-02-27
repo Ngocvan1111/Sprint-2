@@ -17,5 +17,5 @@ public class Category {
     private Long idCategory;
     private String name;
     @OneToMany(mappedBy = "category")
-    private List<FoodItem> foodItemList;
+    private List<Food> foodItemList;
 }

@@ -31,9 +31,10 @@ public class Food {
     @ManyToOne()
     @JoinColumn(name = "unit_id",referencedColumnName = "idUnit")
     private Unit unit;
-    @OneToMany(mappedBy = "foodItem")
+    @OneToMany(mappedBy = "food")
     private List<Image> imageList;
-    @OneToOne(mappedBy = "foodItem")
+    @ManyToOne()
+    @JoinColumn(name = "cart_id",referencedColumnName = "idCart")
     private Cart cart;
 
 }

@@ -17,6 +17,7 @@ public class Image {
     private Long idImage;
     private String url;
     @JsonBackReference
-    @ManyToOne
-    private FoodItem foodItem;
+    @ManyToOne()
+    @JoinColumn(name = "food_id",referencedColumnName = "idFood")
+    private Food food;
 }

@@ -20,7 +20,7 @@ public class Orders {
     private Boolean status;
     private int amount;
     @OneToMany(mappedBy = "order")
-    private Set<FoodItem> foodItemSet;
+    private Set<Food> foodItemSet;
     @ManyToOne
     @JoinColumn(name = "customer_id",referencedColumnName = "idCustomer")
     private Customer customer;

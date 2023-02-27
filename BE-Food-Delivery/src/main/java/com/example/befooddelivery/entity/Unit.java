@@ -17,5 +17,5 @@ public class Unit {
     private Long idUnit;
     private String name;
     @OneToMany(mappedBy = "unit")
-    private List<FoodItem> foodItemList;
+    private List<Food> foodItemList;
 }
