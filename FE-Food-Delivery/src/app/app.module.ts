@@ -11,6 +11,7 @@ import { CartComponent } from './teamplate/cart/cart.component';
 import { DetailComponent } from './teamplate/detail/detail.component';
 import { ProductComponent } from './teamplate/product/product.component';
 import {HttpClientModule} from "@angular/common/http";
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import {HttpClientModule} from "@angular/common/http";
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
