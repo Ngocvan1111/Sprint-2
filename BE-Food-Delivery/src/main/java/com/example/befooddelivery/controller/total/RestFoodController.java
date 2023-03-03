@@ -1,4 +1,4 @@
-package com.example.befooddelivery.controller;
+package com.example.befooddelivery.controller.total;
 
 import com.example.befooddelivery.dto.FoodItemDto;
 import com.example.befooddelivery.service.IFoodService;
@@ -14,7 +14,7 @@ import java.util.Optional;
 
 @RestController
 @CrossOrigin("*")
-@RequestMapping("food")
+@RequestMapping("api/public")
 public class RestFoodController {
     @Autowired
     IFoodService foodService;
