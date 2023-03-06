@@ -89,7 +89,7 @@
       <div class="col-lg-4 col-12">
         <div class="box_service clearfix">
           <div class="image_service">
-            <img class="lazyload loaded" width="70" height="70" src="//bizweb.dktcdn.net/100/068/166/themes/880372/assets/service_1.png?1676015225050" data-src="//bizweb.dktcdn.net/100/068/166/themes/880372/assets/service_1.png?1676015225050" alt="Miễn phí vận chuyển " data-was-processed="true">
+            <img class="loaded" width="70" height="70" src="//bizweb.dktcdn.net/100/068/166/themes/880372/assets/service_1.png?1676015225050" data-src="//bizweb.dktcdn.net/100/068/166/themes/880372/assets/service_1.png?1676015225050" alt="Miễn phí vận chuyển " data-was-processed="true">
           </div>
           <div class="content_service">
             <h3 class="title_service">Miễn phí vận chuyển </h3>
@@ -100,7 +100,7 @@
       <div class="col-lg-4 col-12">
         <div class="box_service clearfix">
           <div class="image_service">
-            <img class="lazyload loaded" width="70" height="70" src="//bizweb.dktcdn.net/100/068/166/themes/880372/assets/service_2.png?1676015225050" data-src="//bizweb.dktcdn.net/100/068/166/themes/880372/assets/service_2.png?1676015225050" alt="Hỗ trợ Online 24/24" data-was-processed="true">
+            <img class="loaded" width="70" height="70" src="//bizweb.dktcdn.net/100/068/166/themes/880372/assets/service_2.png?1676015225050" data-src="//bizweb.dktcdn.net/100/068/166/themes/880372/assets/service_2.png?1676015225050" alt="Hỗ trợ Online 24/24" data-was-processed="true">
           </div>
           <div class="content_service">
             <h3 class="title_service">Hỗ trợ Online 24/24</h3>
@@ -111,7 +111,7 @@
       <div class="col-lg-4 col-12">
         <div class="box_service clearfix">
           <div class="image_service">
-            <img class="lazyload loaded" width="70" height="70" src="//bizweb.dktcdn.net/100/068/166/themes/880372/assets/service_3.png?1676015225050" data-src="//bizweb.dktcdn.net/100/068/166/themes/880372/assets/service_3.png?1676015225050" alt="Quà tặng cuối tuần" data-was-processed="true">
+            <img class=" loaded" width="70" height="70" src="//bizweb.dktcdn.net/100/068/166/themes/880372/assets/service_3.png?1676015225050" data-src="//bizweb.dktcdn.net/100/068/166/themes/880372/assets/service_3.png?1676015225050" alt="Quà tặng cuối tuần" data-was-processed="true">
           </div>
           <div class="content_service">
             <h3 class="title_service">Quà tặng cuối tuần</h3>
@@ -120,134 +120,42 @@
         </div>
       </div>
     </div>
-    <div class="row mt-3">
+    <div class="row mt-3" *ngIf="foodList != undefined">
       <div class="title_module_main clearfix">
         <h2 class="h2">
           <a style="color: white" href="#" title="Khuyến mãi trong ngày">Khuyến mãi trong ngày</a>
         </h2>
       </div>
-      <div class="mt-2 mb-2 col-md-6 col-lg-4 col-xl-4 col-xxl-3">
-        <div class="card center-custom" style="width: 18rem; justify-items: center; justify-content: center">
-          <img src="https://restaurantclicks.com/wp-content/uploads/2022/05/Most-Popular-American-Foods.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Add to cart</a>
-          </div>
-        </div>
-      </div>
-      <div class="mt-2 mb-2 col-md-6  col-lg-4  col-xl-4 col-xxl-3">
-        <div class="card center-custom" style="width: 18rem; justify-items: center; justify-content: center">
-          <img src="https://restaurantclicks.com/wp-content/uploads/2022/05/Most-Popular-American-Foods.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Add to cart</a>
-          </div>
-        </div>
-      </div>
-      <div class="mt-2 mb-2 col-md-6  col-lg-4  col-xl-4 col-xxl-3">
-        <div class="card center-custom" style="width: 18rem; justify-items: center; justify-content: center">
-          <img src="https://restaurantclicks.com/wp-content/uploads/2022/05/Most-Popular-American-Foods.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Add to cart</a>
-          </div>
-        </div>
-      </div>
-      <div class="mt-2 mb-2 col-md-6 col-lg-4  col-xl-4 col-xxl-3">
-        <div class="card center-custom" style="width: 18rem; justify-items: center; justify-content: center">
-          <img src="https://restaurantclicks.com/wp-content/uploads/2022/05/Most-Popular-American-Foods.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Add to cart</a>
-          </div>
-        </div>
-      </div>
+      <div class="row"  *ngIf="foodList != undefined">
+        <div class="col-3 col-md-3 col-lg-3 border-bottom" *ngFor="let food of foodList.content">
+          <div class="main_product">
+            <div class="product-thumbnail" style="height: 249px">
+              <a class="image_thumb" href="#" title="Cam Navel ruột vàng" style="height: 249px;">
+                <img class="lazyload loaded" src="{{food.url}}" data-src="{{food.url}}" alt="Cam Navel ruột vàng" data-was-processed="true">
+              </a>
+              <div class="km"><span style="margin-right: 4px; color: white">KM</span></div>
+            </div>
+            <div class="product-info">
+              <div class="price-box">
+                <span class="price">{{food.price}}₫</span>
+                <span class="compare-price">{{food.comparePrice}}₫</span>
+              </div>
+              <h3 class="product-name"><a routerLink="/cart" title="Cam Navel ruột vàng">{{food.name}}</a></h3>
+            </div>
 
-      <div class="mt-2 mb-2 col-md-6  col-lg-4  col-xl-4 col-xxl-3">
-        <div class="card center-custom" style="width: 18rem; justify-items: center; justify-content: center">
-          <img src="https://restaurantclicks.com/wp-content/uploads/2022/05/Most-Popular-American-Foods.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Add to cart</a>
           </div>
-        </div>
-      </div>
-      <div class="mt-2 mb-2 col-md-6 col-lg-4  col-xl-4 col-xxl-3">
-        <div class="card center-custom" style="width: 18rem; justify-items: center; justify-content: center">
-          <img src="https://restaurantclicks.com/wp-content/uploads/2022/05/Most-Popular-American-Foods.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Add to cart</a>
-          </div>
-        </div>
-      </div>
+          <div class="action">
+            <div class="row">
+              <div class="col-3">
+<!--                <button class="btn btn-primary" >Thêm hàng</button>-->
+              </div>
+              <div class="col-6">
+                <button class="btn btn-primary" [routerLink]="['/detail/',food.idFood]">Xem chi tiết</button>
 
-      <div class="mt-2 mb-2 col-md-6  col-lg-4  col-xl-4 col-xxl-3">
-        <div class="card center-custom" style="width: 18rem; justify-items: center; justify-content: center">
-          <img src="https://restaurantclicks.com/wp-content/uploads/2022/05/Most-Popular-American-Foods.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Add to cart</a>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-      <div class="mt-2 mb-2 col-md-6 col-lg-4  col-xl-4 col-xxl-3">
-        <div class="card center-custom" style="width: 18rem; justify-items: center; justify-content: center">
-          <img src="https://restaurantclicks.com/wp-content/uploads/2022/05/Most-Popular-American-Foods.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Add to cart</a>
-          </div>
-        </div>
-      </div>
 
-      <div class="mt-2 mb-2 col-md-6  col-lg-4  col-xl-4 col-xxl-3">
-        <div class="card center-custom" style="width: 18rem; justify-items: center; justify-content: center">
-          <img src="https://restaurantclicks.com/wp-content/uploads/2022/05/Most-Popular-American-Foods.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Add to cart</a>
-          </div>
-        </div>
-      </div>
-      <div class="mt-2 mb-2 col-md-6 col-lg-4  col-xl-4 col-xxl-3">
-        <div class="card center-custom" style="width: 18rem; justify-items: center; justify-content: center">
-          <img src="https://restaurantclicks.com/wp-content/uploads/2022/05/Most-Popular-American-Foods.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Add to cart</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="mt-2 mb-2 col-md-6  col-lg-4  col-xl-4 col-xxl-3">
-        <div class="card center-custom" style="width: 18rem; justify-items: center; justify-content: center">
-          <img src="https://restaurantclicks.com/wp-content/uploads/2022/05/Most-Popular-American-Foods.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Add to cart</a>
-          </div>
-        </div>
-      </div>
-      <div class="mt-2 mb-2 col-md-6 col-lg-4  col-xl-4 col-xxl-3">
-        <div class="card center-custom" style="width: 18rem; justify-items: center; justify-content: center">
-          <img src="https://restaurantclicks.com/wp-content/uploads/2022/05/Most-Popular-American-Foods.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Add to cart</a>
-          </div>
         </div>
       </div>
     </div>

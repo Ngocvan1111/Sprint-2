@@ -23,17 +23,30 @@
           </div>
         </div>
         <div class="col-xl-4 col-lg-5 col-12 col_three" style="height: 120px">
-          <div class="center">
+          <div class="center" *ngIf="name == ''; else elseBlock">
             <div class="header-right" style="text-align: center; vertical-align: center; display: flex">
-              <a style="margin: auto; margin-right: 3px" routerLink="/login">Đăng nhập</a>
+              <a style="margin: auto; margin-right: 3px" routerLink="/login">Đăng nhập {{name}}</a>
               <span style="margin: auto; margin-right: 3px; margin-left: 3px" class="line">/</span>
               <a style="margin: auto; margin-left: 3px; margin-right: 10px" href="#" class="btns">Đăng ký</a>
               <div style="height: 40px;width: 140px; background-color: #dc7555; display: flex; " >
                 <a routerLink="/cart" style="margin: auto; color: white"> <i class="bi bi-basket"></i> Giỏ hàng: (0)</a>
               </div>
             </div>
-          </div>
+            <h1>{{name}}</h1>
 
+          </div>
+          <ng-template #elseBlock>
+            <div class="center">
+              <div class="header-right" style="text-align: center; vertical-align: center; display: flex">
+                <a style="margin: auto; margin-right: 3px" >{{name}}</a>
+                <span style="margin: auto; margin-right: 3px; margin-left: 3px" class="line">/</span>
+                <a style="margin: auto; margin-left: 3px; margin-right: 10px" href="#" class="btns">Đăng xuất</a>
+                <div style="height: 40px;width: 140px; background-color: #dc7555; display: flex; " >
+                  <a routerLink="/cart" style="margin: auto; color: white"> <i class="bi bi-basket"></i> Giỏ hàng: (0)</a>
+                </div>
+              </div>
+            </div>
+          </ng-template>
         </div>
       </div>
     </div>
@@ -43,7 +56,7 @@
     <div class="col-xxl-8 bg-white">
       <nav class="navbar navbar-expand-lg navbar-light bg-white" style="height: 100%">
         <div class="container-fluid">
-          <a class="navbar-brand" routerLink="" style="font-family: Arial, sans-serif;">TRANG CHỦ</a>
+          <a class="navbar-brand" routerLink="/home" style="font-family: Arial, sans-serif;">TRANG CHỦ</a>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="me-4" style="vertical-align: center; display: flex" >

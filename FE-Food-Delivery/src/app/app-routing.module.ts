@@ -8,7 +8,7 @@ import {ProductComponent} from "./teamplate/product/product.component";
 
 const routes: Routes = [
   {
-    path: '', component: HomeComponent,
+    path: 'home', component: HomeComponent,
   },
   {
     path: 'login',  component: LoginComponent,
@@ -17,7 +17,7 @@ const routes: Routes = [
     path: 'cart', component: CartComponent,
   },
   {
-    path: 'detail', component: DetailComponent,
+    path: 'detail/:id', component: DetailComponent,
   },
   {
     path: 'product', component: ProductComponent,

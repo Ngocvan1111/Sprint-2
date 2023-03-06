@@ -17,16 +17,10 @@ export class ProductComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAllFood(0);
-    this.toastrService.success('Đăng nhập thành công.', 'Thông báo', {
-      timeOut: 2000,
-      progressBar: true,
-      positionClass: 'toast-top-right',
-      easing: 'ease-in'})
   }
   getAllFood(pageNumber: any):void {
 this.foodService.getAllFood(pageNumber).subscribe(data => {
   this.foodList = data;
-  console.log(this.foodList)
 }, error => {}, () =>{})
   }
 

@@ -3,6 +3,9 @@ import {FormBuilder, FormGroup} from "@angular/forms";
 import {TokenService} from "../../service/token.service";
 import {SecurityService} from "../../service/security.service";
 import {ToastrService} from "ngx-toastr";
+import {DataBindingService} from "../../service/data-binding.service";
+import {Router} from "@angular/router";
+import {DataBinding} from "../../dto/data-binding";
 
 @Component({
   selector: 'app-login',
@@ -11,11 +14,15 @@ import {ToastrService} from "ngx-toastr";
 })
 export class LoginComponent implements OnInit {
   signInForm: FormGroup = new FormGroup({});
+  name: string | undefined;
+  dataBinding: DataBinding = {id:0, name: ''};
 
   constructor(private formBuilder: FormBuilder,
               private tokenService: TokenService,
               private securityService: SecurityService,
-              private toastrService: ToastrService) { }
+              private toastrService: ToastrService,
+              private dataBindingService: DataBindingService,
+              private router: Router) { }
 
   ngOnInit(): void {
     this.getFormLogin();
@@ -28,9 +35,10 @@ export class LoginComponent implements OnInit {
         this.tokenService.setName(data.name);
         this.tokenService.setToken(data.token);
         this.tokenService.setEmail(data.email);
-        this.tokenService.setId(data.id)
-        alert(data.status)
-        location.href='http://localhost:4200/'
+        this.tokenService.setId(data.id);
+        this.setValue(data.id, data.name)
+        this.dataBindingService.changeData(this.dataBinding);
+        this.router.navigateByUrl('/home');
         this.toastrService.success('Đăng nhập thành công.', 'Thông báo', {
           timeOut: 2000,
           progressBar: true,
@@ -63,5 +71,10 @@ export class LoginComponent implements OnInit {
       email: [''],
       password: [''],
     })
+  }
+  setValue(id: any, name: any){
+    this.dataBinding.id = id;
+    this.dataBinding.name = name;
+
   }
 }

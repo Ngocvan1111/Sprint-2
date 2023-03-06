@@ -21,6 +21,7 @@ public class Food {
     private Double price;
     private Double comparePrice;
     private String description;
+    @Column(nullable = true)
     private LocalDate createdDate = LocalDate.now();
     @ManyToOne()
     @JoinColumn(name = "order_id",referencedColumnName = "idOrders")
@@ -33,8 +34,7 @@ public class Food {
     private Unit unit;
     @OneToMany(mappedBy = "food")
     private List<Image> imageList;
-    @ManyToOne()
-    @JoinColumn(name = "cart_id",referencedColumnName = "idCart")
-    private Cart cart;
+//    @ManyToMany()
+//    private List<Cart>  cart;
 
 }

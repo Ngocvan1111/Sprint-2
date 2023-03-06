@@ -12,7 +12,7 @@ export class FoodService {
   }
 
   getAllFood(pageNumber: any): Observable<FoodPage> {
-    return this.httpClient.get<FoodPage>('http://localhost:8080/food/list?page=' + pageNumber);
+    return this.httpClient.get<FoodPage>('http://localhost:8080/api/public/list?page=' + pageNumber);
   }
 }
 

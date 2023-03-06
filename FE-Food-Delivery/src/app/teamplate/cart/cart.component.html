@@ -1,74 +1,131 @@
-<div class="main-content" style=" height: 60vh;background-color: gainsboro; margin-top: 40px">
-  <div class="container-content" style="height: 55vh; width: 65vw; background-color: white">
-    <div class="row m-0" style="height: 35px">
-      <div class="col-2 m-0" style="border: gainsboro solid 1px">
-        <p class="m-0" style="text-align: center; line-height: 35px; font-weight: 500">Hình ảnh</p>
-      </div>
-      <div class="col-3" style="border: gainsboro solid 1px">
-        <p class="m-0" style="text-align: center; line-height: 35px; font-weight: 500">Tên sản phẩm</p>
-      </div>
-      <div class="col-2" style="border: gainsboro solid 1px">
-        <p class="m-0" style="text-align: center; line-height: 35px; font-weight: 500">Đơn giá</p>
-      </div>
-      <div class="col-2" style="border: gainsboro solid 1px">
-        <p class="m-0" style="text-align: center; line-height: 35px; font-weight: 500">Số lượng</p>
-      </div>
-      <div class="col-2" style="border: gainsboro solid 1px">
-        <p class="m-0" style="text-align: center; line-height: 35px; font-weight: 500">Thành tiền</p>
-      </div>
-      <div class="col-1" style="border: gainsboro solid 1px">
-        <p class="m-0" style="text-align: center; line-height: 35px; font-weight: 500">Xóa</p>
-      </div>
-    </div>
-    <div class="row m-0" style="height: 176px">
-      <div class="col-2 m-0" style="border: gainsboro solid 1px">
-        <div class="product-thumbnail">
-          <a class="image_thumb" href="#" title="Cam Navel ruột vàng" style="height: 249px;">
-            <img class="lazyload loaded" src="//bizweb.dktcdn.net/thumb/large/100/068/166/products/4.jpg?v=1458638411903" data-src="//bizweb.dktcdn.net/thumb/large/100/068/166/products/4.jpg?v=1458638411903" alt="Cam Navel ruột vàng" data-was-processed="true">
-          </a>
+<div class="row m-0"style="min-height: 100vh; width: 100vw">
+  <div class="row " style="min-height: 20vh; width: 100vw; margin-top: 10px">
+    <div class="col-2"></div>
+    <div class="col-8">
+      <table class="table table-bordered">
+        <thead>
+        <tr style="text-align: center; background-color: #f16c52" >
+          <th>Hình ảnh</th>
+          <th>Tên sản phẩm</th>
+          <th>Giá</th>
+          <th>Số lượng</th>
+          <th>Thành tiền</th>
+          <th>Xóa</th>
+        </tr>
+        </thead>
+        <tbody >
+        <tr style="height: 176px" *ngFor="let food of foodList">
+          <td style="width: 25%;height: 176px; text-align: center;line-height: 176px"><img src="{{food.url}}"> </td>
+          <td style="width: 25%; text-align: center; line-height: 176px">{{food.foodName}}</td>
+          <td style="width: 15%; text-align: center; line-height: 176px">{{food.price}}₫</td>
+          <td style="width: 15%; text-align: center; line-height: 176px">{{food.quantity}}</td>
+          <td style="width: 15%; text-align: center; line-height: 176px">{{food.quantity*food.price}}₫</td>
+          <td style="width: 5%; text-align: center; line-height: 176px"><button><i class="bi bi-trash3 *1.5"></i></button> </td>
+        </tr>
+        </tbody>
+      </table>
+      <div class="row mt-2" style="height: 50px">
+        <div class="col-10"></div>
+        <div class="col-2">
+          <span>Thành tiền: </span>
+          <span class="price" style="text-align: center;line-height: 50px; color: #eb7058; font-weight: 700; font-size: 16px" >{{totalPay}}₫</span>
         </div>
       </div>
-      <div class="col-3" style="border: gainsboro solid 1px">
-        <p class="m-0" style="text-align: center; line-height: 176px">Tên sản phẩm</p>
-      </div>
-      <div class="col-2" style="border: gainsboro solid 1px">
-        <p style="text-align: center;line-height: 176px; color: #eb7058; font-weight: 700"><span class="price">240.000₫</span></p>
-      </div>
-      <div class="col-2" style="border: gainsboro solid 1px">
-        <p class="m-0" style="text-align: center; line-height: 176px">2</p>
-      </div>
-      <div class="col-2" style="border: gainsboro solid 1px">
-        <p style="text-align: center;line-height: 176px; color: #eb7058; font-weight: 700"><span class="price">480.000₫</span></p>
-      </div>
-      <div class="col-1" style="border: gainsboro solid 1px">
-        <p class="m-0" style="text-align: center; line-height: 176px"><i class="bi bi-trash3 *1.5"></i></p>
-      </div>
-    </div>
-    <div class="row mt-2" style="height: 50px">
-      <div class="col-10"></div>
-      <div class="col-2">
-        <span>Thành tiền: </span>
-        <span class="price" style="text-align: center;line-height: 50px; color: #eb7058; font-weight: 700; font-size: 16px" >480.000₫</span>
-      </div>
-    </div>
 
-    <div class="row m-0" style="height: 50px">
-      <div class="col-8"></div>
-      <div class="col-4">
-        <div class="row">
-          <div class="col-6" style="border-radius: 5px">
-            <p style="text-align: center; line-height: 50px; background-color: #f1f1f1">Tiếp tục mua sắm</p>
-          </div>
-          <div class="col-6" style="border-radius: 5px">
-            <p style="text-align: center; line-height: 50px; color: white; background-color: #f16c52">Tiến hành đặt hàng</p>
+      <div class="row m-0" style="height: 50px">
+        <div class="col-8"></div>
+        <div class="col-4">
+          <div class="row">
+            <div class="col-6" style="border-radius: 5px">
+              <p style="text-align: center; line-height: 50px; background-color: #f1f1f1">Tiếp tục mua sắm</p>
+            </div>
+            <div class="col-6" style="border-radius: 5px">
+              <p style="text-align: center; line-height: 50px; color: white; background-color: #f16c52">Tiến hành đặt hàng</p>
+            </div>
+
           </div>
 
         </div>
-
       </div>
     </div>
-
-  </div>
+    </div>
+    <div class="col-2"></div>
 
 </div>
+
+
+<!--<div class="main-content" style=" min-height: 60vh;background-color: gainsboro; margin-top: 40px">-->
+<!--  <div class="container-content" style="min-height: 55vh; width: 65vw; background-color: white">-->
+<!--    <div class="row m-0" style="height: 35px">-->
+<!--      <div class="col-2 m-0" style="border: gainsboro solid 1px">-->
+<!--        <p class="m-0" style="text-align: center; line-height: 35px; font-weight: 500">Hình ảnh</p>-->
+<!--      </div>-->
+<!--      <div class="col-3" style="border: gainsboro solid 1px">-->
+<!--        <p class="m-0" style="text-align: center; line-height: 35px; font-weight: 500">Tên sản phẩm</p>-->
+<!--      </div>-->
+<!--      <div class="col-2" style="border: gainsboro solid 1px">-->
+<!--        <p class="m-0" style="text-align: center; line-height: 35px; font-weight: 500">Đơn giá</p>-->
+<!--      </div>-->
+<!--      <div class="col-2" style="border: gainsboro solid 1px">-->
+<!--        <p class="m-0" style="text-align: center; line-height: 35px; font-weight: 500">Số lượng</p>-->
+<!--      </div>-->
+<!--      <div class="col-2" style="border: gainsboro solid 1px">-->
+<!--        <p class="m-0" style="text-align: center; line-height: 35px; font-weight: 500">Thành tiền</p>-->
+<!--      </div>-->
+<!--      <div class="col-1" style="border: gainsboro solid 1px">-->
+<!--        <p class="m-0" style="text-align: center; line-height: 35px; font-weight: 500">Xóa</p>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="row m-0 aaa" style="height: 176px;background-color: red" *ngFor="let food of foodList">-->
+<!--      <div class="col-2" style="border: gainsboro solid 1px">-->
+<!--        <div class="product-thumbnail">-->
+<!--          <a class="image_thumb" href="#" title="Cam Navel ruột vàng" style="height: 249px;">-->
+<!--            <img class="lazyload loaded" src="{{food.url}}" data-src="{{food.url}}" alt="Cam Navel ruột vàng" data-was-processed="true">-->
+<!--          </a>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div class="col-3" style="border: gainsboro solid 1px">-->
+<!--        <p class="m-0" style="text-align: center; line-height: 176px">{{food.foodName}}</p>-->
+<!--      </div>-->
+<!--      <div class="col-2" style="border: gainsboro solid 1px">-->
+<!--        <p style="text-align: center;line-height: 176px; color: #eb7058; font-weight: 700"><span class="price">{{food.price}}₫</span></p>-->
+<!--      </div>-->
+<!--      <div class="col-2" style="border: gainsboro solid 1px">-->
+<!--        <p class="m-0" style="text-align: center; line-height: 176px">{{food.quantity}}</p>-->
+<!--      </div>-->
+<!--      <div class="col-2" style="border: gainsboro solid 1px">-->
+<!--        <p style="text-align: center;line-height: 176px; color: #eb7058; font-weight: 700"><span class="price">480.000₫</span></p>-->
+<!--      </div>-->
+<!--      <div class="col-1" style="border: gainsboro solid 1px">-->
+<!--        <p class="m-0" style="text-align: center; line-height: 176px"><i class="bi bi-trash3 *1.5"></i></p>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="row mt-2" style="height: 50px">-->
+<!--      <div class="col-10"></div>-->
+<!--      <div class="col-2">-->
+<!--        <span>Thành tiền: </span>-->
+<!--        <span class="price" style="text-align: center;line-height: 50px; color: #eb7058; font-weight: 700; font-size: 16px" >480.000₫</span>-->
+<!--      </div>-->
+<!--    </div>-->
+
+<!--    <div class="row m-0" style="height: 50px">-->
+<!--      <div class="col-8"></div>-->
+<!--      <div class="col-4">-->
+<!--        <div class="row">-->
+<!--          <div class="col-6" style="border-radius: 5px">-->
+<!--            <p style="text-align: center; line-height: 50px; background-color: #f1f1f1">Tiếp tục mua sắm</p>-->
+<!--          </div>-->
+<!--          <div class="col-6" style="border-radius: 5px">-->
+<!--            <p style="text-align: center; line-height: 50px; color: white; background-color: #f16c52">Tiến hành đặt hàng</p>-->
+<!--          </div>-->
+
+<!--        </div>-->
+
+<!--      </div>-->
+<!--    </div>-->
+<!--&lt;!&ndash;    <table></table>&ndash;&gt;-->
+
+<!--  </div>-->
+
+<!--</div>-->
 
