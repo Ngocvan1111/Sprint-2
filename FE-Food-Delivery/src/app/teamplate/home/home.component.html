@@ -52,6 +52,16 @@
                   </div>
                   <h3 class="product-name"><a routerLink="/cart" title="Cam Navel ruột vàng">Cam Navel ruột vàng</a></h3>
                 </div>
+                <div class="action">
+                  <div class="row">
+                    <div class="col-3">
+                    </div>
+                    <div class="col-6">
+                      <button class="btn btn-primary" >Xem chi tiết</button>
+
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="col-6 col-md-6 col-lg-12 border-bottom">
@@ -70,11 +80,10 @@
                 </div>
                 <div class="action">
                   <div class="row">
-                    <div class="col-6">
-                      <button class="btn btn-primary" >Thêm hàng</button>
+                    <div class="col-3">
                     </div>
                     <div class="col-6">
-                      <button class="btn btn-primary">Xem chi tiết</button>
+                      <button class="btn btn-primary" >Xem chi tiết</button>
 
                     </div>
                   </div>
@@ -121,24 +130,22 @@
       </div>
     </div>
     <div class="row mt-3" *ngIf="foodList != undefined">
-      <div class="title_module_main clearfix">
-        <h2 class="h2">
-          <a style="color: white" href="#" title="Khuyến mãi trong ngày">Khuyến mãi trong ngày</a>
-        </h2>
+      <div class="title_module_main clearfix" style="height: 45px">
+          <h3 style="color: white; line-height: 45px" title="Khuyến mãi trong ngày" >Khuyến mãi trong ngày</h3>
       </div>
       <div class="row"  *ngIf="foodList != undefined">
         <div class="col-3 col-md-3 col-lg-3 border-bottom" *ngFor="let food of foodList.content">
           <div class="main_product">
             <div class="product-thumbnail" style="height: 249px">
-              <a class="image_thumb" href="#" title="Cam Navel ruột vàng" style="height: 249px;">
+              <div class="image_thumb" title="Cam Navel ruột vàng" style="height: 249px;">
                 <img class="lazyload loaded" src="{{food.url}}" data-src="{{food.url}}" alt="Cam Navel ruột vàng" data-was-processed="true">
-              </a>
-              <div class="km"><span style="margin-right: 4px; color: white">KM</span></div>
+              </div>
+              <div class="km" ><span style="margin-right: 4px; color: white">KM</span></div>
             </div>
             <div class="product-info">
               <div class="price-box">
-                <span class="price">{{food.price}}₫</span>
-                <span class="compare-price">{{food.comparePrice}}₫</span>
+                <span class="price">{{food.price | number}}₫</span>
+                <span class="compare-price">{{food.comparePrice | number}}₫</span>
               </div>
               <h3 class="product-name"><a routerLink="/cart" title="Cam Navel ruột vàng">{{food.name}}</a></h3>
             </div>
@@ -147,7 +154,6 @@
           <div class="action">
             <div class="row">
               <div class="col-3">
-<!--                <button class="btn btn-primary" >Thêm hàng</button>-->
               </div>
               <div class="col-6">
                 <button class="btn btn-primary" [routerLink]="['/detail/',food.idFood]">Xem chi tiết</button>
@@ -159,6 +165,63 @@
         </div>
       </div>
     </div>
+    <div *ngIf="foodList" class="d-flex justify-content-center" id="last-row" style="margin-top: 20px">
+      <div>
+      </div>
+      <div>
+        <nav aria-label="Page navigation example">
+          <ul class="pagination">
+            <li class="page-item" [ngClass]="foodList.first ? 'disabled': ''">
+              <a role="button" class="page-link" (click)="gotoPage(0)">Trang đầu</a>
+            </li>
+            <li class="page-item" [ngClass]="foodList.first ? 'disabled': ''">
+              <a role="button" class="page-link" (click)="gotoPage(foodList.number - 1)"><</a>
+            </li>
+            <li class="page-item" *ngIf="foodList.number - 3 > 0">
+              <a role="button" class="page-link"
+                 (click)="gotoPage(foodList.number - 4)">{{foodList.number - 3}}</a>
+            </li>
+            <li class="page-item" *ngIf="foodList.number - 2 > 0">
+              <a role="button" class="page-link"
+                 (click)="gotoPage(foodList.number - 3)">{{foodList.number - 2}}</a>
+            </li>
+            <li class="page-item" *ngIf="foodList.number - 1 > 0">
+              <a role="button" class="page-link"
+                 (click)="gotoPage(foodList.number - 2)">{{foodList.number - 1}}</a>
+            </li>
+            <li class="page-item" *ngIf="foodList.number > 0">
+              <a role="button" class="page-link"
+                 (click)="gotoPage(foodList.number - 1)">{{foodList.number}}</a>
+            </li>
+
+            <li class="page-item active"><a class="page-link">{{foodList.number + 1}}</a></li>
+
+            <li class="page-item" *ngIf="foodList.number + 2 <= foodList.totalPages">
+              <a role="button" class="page-link"
+                 (click)="gotoPage(foodList.number + 1)">{{foodList.number + 2}}</a>
+            </li>
+            <li class="page-item" *ngIf="foodList.number + 3 <= foodList.totalPages">
+              <a role="button" class="page-link"
+                 (click)="gotoPage(foodList.number + 2)">{{foodList.number + 3}}</a>
+            </li>
+            <li class="page-item" *ngIf="foodList.number + 4 <= foodList.totalPages">
+              <a role="button" class="page-link"
+                 (click)="gotoPage(foodList.number + 3)">{{foodList.number + 4}}</a>
+            </li>
+            <li class="page-item" *ngIf="foodList.number + 5 <= foodList.totalPages">
+              <a role="button" class="page-link"
+                 (click)="gotoPage(foodList.number + 4)">{{foodList.number + 5}}</a>
+            </li>
+            <li class="page-item" [ngClass]="foodList.last ? 'disabled': ''">
+              <a role="button" class="page-link" (click)="gotoPage(foodList.number + 1)">></a>
+            </li>
+            <li class="page-item" [ngClass]="foodList.last ? 'disabled': ''">
+              <a role="button" class="page-link" (click)="gotoPage(foodList.totalPages - 1)">Trang cuối</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+  </div>
   </div>
 
 

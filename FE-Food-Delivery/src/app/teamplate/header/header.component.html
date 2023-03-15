@@ -12,24 +12,25 @@
         </div>
         <div class="col-xl-5 col-lg-4 col-12 col_second">
           <div class="center ">
-            <div class="search d-flex">
-              <input name="search" id="search" class="form-control " style="width: 70%">
-              <button type="submit" class="btn btn-outline-danger me-2 " style="width: 135px">
-                <i class="bi bi-search"></i>
-                Tìm kiếm
-              </button>
-            </div>
-
+            <form autocomplete="off" [formGroup]="searchForm">
+              <div class="search d-flex">
+                <input name="search" id="search" class="form-control " formControlName="name" style="width: 70%">
+                <button type="submit" (click)="onSubmit()" class="btn btn-outline-danger me-2 " style="width: 135px">
+                  <i class="bi bi-search"></i>
+                  Tìm kiếm
+                </button>
+              </div>
+            </form>
           </div>
         </div>
         <div class="col-xl-4 col-lg-5 col-12 col_three" style="height: 120px">
-          <div class="center" *ngIf="name == ''; else elseBlock">
+          <div class="center" *ngIf="name == null; else elseBlock">
             <div class="header-right" style="text-align: center; vertical-align: center; display: flex">
               <a style="margin: auto; margin-right: 3px" routerLink="/login">Đăng nhập {{name}}</a>
               <span style="margin: auto; margin-right: 3px; margin-left: 3px" class="line">/</span>
               <a style="margin: auto; margin-left: 3px; margin-right: 10px" href="#" class="btns">Đăng ký</a>
               <div style="height: 40px;width: 140px; background-color: #dc7555; display: flex; " >
-                <a routerLink="/cart" style="margin: auto; color: white"> <i class="bi bi-basket"></i> Giỏ hàng: (0)</a>
+                <a routerLink="/cart" style="margin: auto; color: white"> <i class="bi bi-basket"></i> Giỏ hàng: ({{quantityFoodInCart}})</a>
               </div>
             </div>
             <h1>{{name}}</h1>
@@ -40,9 +41,9 @@
               <div class="header-right" style="text-align: center; vertical-align: center; display: flex">
                 <a style="margin: auto; margin-right: 3px" >{{name}}</a>
                 <span style="margin: auto; margin-right: 3px; margin-left: 3px" class="line">/</span>
-                <a style="margin: auto; margin-left: 3px; margin-right: 10px" href="#" class="btns">Đăng xuất</a>
+                <a style="margin: auto; margin-left: 3px; margin-right: 10px; color: blue" (click)="logout()" class="btns">Đăng xuất</a>
                 <div style="height: 40px;width: 140px; background-color: #dc7555; display: flex; " >
-                  <a routerLink="/cart" style="margin: auto; color: white"> <i class="bi bi-basket"></i> Giỏ hàng: (0)</a>
+                  <a routerLink="/cart" style="margin: auto; color: white"> <i class="bi bi-basket"></i> Giỏ hàng: ({{quantityFoodInCart}})</a>
                 </div>
               </div>
             </div>

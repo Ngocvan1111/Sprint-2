@@ -6,10 +6,10 @@ import {DataBinding} from "../dto/data-binding";
   providedIn: 'root'
 })
 export class DataBindingService {
-  private dataSource = new BehaviorSubject<DataBinding>({id: 0, name: ''})
+  private dataSource = new BehaviorSubject<string>("")
   currentData = this.dataSource.asObservable()
   constructor() { }
-  changeData(data: DataBinding){
+  changeData(data: string){
     this.dataSource.next(data);
   }
 }

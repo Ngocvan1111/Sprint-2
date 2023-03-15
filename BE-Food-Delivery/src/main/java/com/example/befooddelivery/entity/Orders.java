@@ -1,5 +1,6 @@
 package com.example.befooddelivery.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.*;
 
 import javax.persistence.*;
@@ -23,5 +24,6 @@ public class Orders {
     private Set<Food> foodItemSet;
     @ManyToOne
     @JoinColumn(name = "customer_id",referencedColumnName = "idCustomer")
+    @JsonBackReference
     private Customer customer;
 }

@@ -24,4 +24,19 @@ img{
   font-weight: 700;
   font-family: Arial,sans-serif;
 }
+.hover-class1{
+  background-color: #f1f1f1;
+}
+.hover-class1:hover{
+  cursor: pointer;
+  background-color: #f16c52;
+}
+.hover-class2{
+  cursor: pointer;
+  background-color: #f16c52;
+}
+.hover-class2:hover{
+  cursor: pointer;
+  background-color: green;
+}
 

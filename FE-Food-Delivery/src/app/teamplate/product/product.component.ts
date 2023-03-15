@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FoodService} from "../../service/food.service";
 import {FoodPage} from "../../dto/food-page";
 import {ToastrService} from "ngx-toastr";
+import {Food} from "../../dto/food";
 
 @Component({
   selector: 'app-product',
@@ -9,19 +10,23 @@ import {ToastrService} from "ngx-toastr";
   styleUrls: ['./product.component.css']
 })
 export class ProductComponent implements OnInit {
-  foodList!: FoodPage;
+  foodList!: Food[];
 
 
   constructor(private foodService: FoodService,
-              private toastrService: ToastrService) { }
+              private toastrService: ToastrService) {
+  }
 
   ngOnInit(): void {
-    this.getAllFood(0);
+    this.getFoodByCategory(1)
   }
-  getAllFood(pageNumber: any):void {
-this.foodService.getAllFood(pageNumber).subscribe(data => {
-  this.foodList = data;
-}, error => {}, () =>{})
+
+  getFoodByCategory(idCategory: number){
+    this.foodService.getFoodByCategory(idCategory).subscribe(data =>{
+      this.foodList = data;
+    }, error => {
+    }, () => {
+    })
   }
 
 }

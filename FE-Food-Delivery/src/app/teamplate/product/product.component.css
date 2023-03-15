@@ -150,4 +150,9 @@ img{
   top: 10px;
   z-index: 7;
 }
+.lazyload{
+  position: absolute;
+  height: 249px;
+
+}
 

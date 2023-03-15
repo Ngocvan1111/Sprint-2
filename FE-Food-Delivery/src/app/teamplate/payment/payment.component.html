@@ -1,0 +1,89 @@
+<div class="row">
+  <div class="col-3"></div>
+  <div class="col-3 me-5" >
+    <div class="row ">
+      <h2>Thông tin khách hàng</h2>
+      <hr>
+      <div class="col-3">
+        <p>Email:</p>
+      </div>
+      <div class="col-9">
+        <p>{{customer.email}}</p>
+    </div>
+    </div>
+    <div class="row">
+      <div class="col-3">
+        <p>Họ tên:</p>
+      </div>
+      <div class="col-9">
+        <p>{{customer.name}}</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-3">
+        <p>Số diện thoại:</p>
+      </div>
+      <div class="col-9">
+        <p>{{customer.phoneNumber}}</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-3">
+        <p>Địa chỉ:</p>
+      </div>
+      <div class="col-9">
+        <p>{{customer.address}}</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-3">
+        <p>Ghi chú</p>
+      </div>
+      <div class="col-9">
+        <textarea rows="3" cols="40" style="border: black 1px solid"></textarea>
+      </div>
+    </div>
+  </div>
+  <div class="col-3 ps-4" style="border-left: black 1px solid">
+    <h2 style="margin-top: 0">Đơn hàng ({{quantityFoodInCart}} Sản phẩm)</h2>
+    <table class="table border-0">
+      <thead>
+      <tr>
+        <th ></th>
+        <th ></th>
+        <th ></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let food of foodList">
+        <td style="height: 90px; width: 20%; line-height: 90px;padding: 3px">
+          <div class="img-contain">
+            <img src="{{food.url}}" alt="">
+            <div class="quantity">
+              <p style="text-align: center">{{food.quantity}}</p>
+            </div>
+          </div>
+
+        </td>
+        <td style="width: 60%; line-height: 90px;padding: 0">
+          {{food.foodName}}
+        </td>
+        <td style="line-height: 90px;padding: 0">
+          {{food.price*food.quantity | number}}đ
+        </td>
+      </tr>
+      </tbody>
+    </table>
+    <div class="row">
+
+      <div class="col-12">
+        <h4 style="color: orange">Tổng tiền: {{totalPayVND | number}}đ <=> {{totalPayUSD}}USD</h4>
+      </div>
+    </div>
+    <h2>Thanh toán & Mua hàng</h2>
+    <hr>
+    <div id="myPaypalButtons"></div>
+
+  </div>
+  <div class="col-3"></div>
+</div>

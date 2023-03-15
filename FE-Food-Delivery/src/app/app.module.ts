@@ -14,6 +14,8 @@ import {HttpClientModule} from "@angular/common/http";
 import {ReactiveFormsModule} from "@angular/forms";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {ToastrModule, ToastrService} from "ngx-toastr";
+import { PaymentComponent } from './teamplate/payment/payment.component';
+import { RemoveFoodFromCartComponent } from './teamplate/modal/remove-food-from-cart/remove-food-from-cart.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,8 @@ import {ToastrModule, ToastrService} from "ngx-toastr";
     CartComponent,
     DetailComponent,
     ProductComponent,
+    PaymentComponent,
+    RemoveFoodFromCartComponent,
 
   ],
   imports: [

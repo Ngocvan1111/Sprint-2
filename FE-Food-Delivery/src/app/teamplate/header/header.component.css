@@ -131,4 +131,7 @@ img{
   color: #f16c52;
   cursor: pointer;
 }
+.btns:hover{
+  cursor: pointer;
+}
 

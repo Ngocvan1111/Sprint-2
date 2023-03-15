@@ -1,5 +1,6 @@
 package com.example.befooddelivery.entity;
 import com.example.befooddelivery.entity.account.Account;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.*;
 
 import javax.persistence.*;
@@ -24,6 +25,7 @@ public class Customer {
     @OneToMany(mappedBy = "customer")
     private List<Orders> orderList;
     @OneToOne(mappedBy = "customer")
+    @JsonBackReference
     private Cart cart;
 
 }

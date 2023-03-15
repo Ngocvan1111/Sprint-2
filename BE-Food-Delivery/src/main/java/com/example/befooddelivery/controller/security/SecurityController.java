@@ -5,6 +5,7 @@ import com.example.befooddelivery.dto.account.response.JwtResponse;
 import com.example.befooddelivery.jwt.jwt.JwtProvider;
 import com.example.befooddelivery.jwt.jwt.JwtTokenFilter;
 import com.example.befooddelivery.jwt.userprincal.AccountPrincal;
+import com.example.befooddelivery.service.IUserService;
 import com.example.befooddelivery.service.account.IAccountService;
 import com.example.befooddelivery.service.account.IRoleService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,6 +35,8 @@ public class SecurityController {
     JwtProvider jwtProvider;
     @Autowired
     JwtTokenFilter jwtTokenFilter;
+    @Autowired
+    IUserService userService;
 
     @PostMapping("/signin")
     public ResponseEntity<?> login(@Valid @RequestBody SignInForm signInForm) {
@@ -44,11 +47,13 @@ public class SecurityController {
 
         String token = jwtProvider.createToken(authentication);
         AccountPrincal accountPrinciple = (AccountPrincal) authentication.getPrincipal();
+        Long idAccount = accountPrinciple.getIdAccount();
+        Long idCustomer = userService.findCustomerByIdAccount(idAccount).getIdCustomer();
         return ResponseEntity.ok(new JwtResponse(token,
                 accountPrinciple.getName(),
                 accountPrinciple.getAuthorities(),
                 accountPrinciple.getIdAccount(),
+                idCustomer,
                 accountPrinciple.getEmail()));
-
     }
 }

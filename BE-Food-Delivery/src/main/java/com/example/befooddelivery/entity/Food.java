@@ -16,6 +16,7 @@ public class Food {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idFood;
+    private String code;
     private String name;
     private int quantity;
     private Double price;
@@ -34,7 +35,8 @@ public class Food {
     private Unit unit;
     @OneToMany(mappedBy = "food")
     private List<Image> imageList;
-//    @ManyToMany()
-//    private List<Cart>  cart;
+    @ManyToOne()
+    @JoinColumn(name = "origin_id", referencedColumnName = "idOrigin")
+    private Origin  origin;
 
 }

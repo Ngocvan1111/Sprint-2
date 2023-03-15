@@ -1,7 +1,6 @@
 <div class="main bg-light" style="min-height: 100vh" *ngIf="imageList != undefined">
   <div class="row" >
     <div class="col-3"></div>
-
     <div class="col-6 bg-white">
       <div style="margin-top: 30px">
         <div class="row">
@@ -65,24 +64,18 @@
           </div>
           <div class="col-6" >
             <div class="mt-3">
-              <h5>Cam Navel ruột vàng</h5>
-              <p>Tình trạng: <span style="color: orangered"> Còn hàng</span></p>
-              <p>Mã sản phẩm: <span style="color: orangered"> Đang cập nhật</span></p>
-              <div class="price-box">
-                <span class="price">240.000₫</span>
-                <span class="compare-price">340.000₫</span>
-              </div>
+              <h5>{{foodDetail.name}}</h5>
+              <p ><span> Tình trạng:</span> <span style="color: orangered"> Còn hàng</span></p>
+              <p>Mã sản phẩm: <span style="color: orangered">{{foodDetail.code}}</span></p>
+              <p  >Giá: <span class="price" style="color: orangered;font-size: 16px">{{foodDetail.price| number}}₫</span><span class="compare-price" *ngIf="foodDetail.price != foodDetail.comparePrice"> {{foodDetail.comparePrice | number}}₫</span></p>
               <div class="rte">
-
-                Nguồn gốc: Úc
-
-                Khối lượng: 1.0Kg/ hộp
-
-                Cam Navel ruột vàng Úc vỏ màu vàng, ruột màu vàng đậm, vị ngọt thanh, không hạt, mọng nước. Thường dùng ...
+                Nguồn gốc: <span style="color: orangered">{{foodDetail.origin}}</span>
+                <br>
+                <span>Giới thiệu: </span> {{foodDetail.description}}
 
               </div>
               <div>
-                <label class="sl section" style="color: #898989;">Số lượng:</label>
+                <label class="sl section" style="color: #898989;">Số lượng: <span style="color: orangered">{{foodDetail.quantity}}</span></label>
               </div>
               <div class="form-product col-sm-12">
                 <div style=" display: inline-block; height: 40px;">
@@ -97,7 +90,7 @@
                   </button>
                 </div>
                 <div class="add-cart-detail" style="height: 40px; background-color: #f16c52; display: inline-block; border-radius: 5px  ">
-                  <p class="color-white" style="line-height: 40px; font-size: 14px; padding: 0 7px " (click)="test()"> Thêm vào giỏ hàng</p>
+                  <p class="color-white" style="line-height: 40px; font-size: 14px; padding: 0 7px " (click)="addToCart()"> Thêm vào giỏ hàng</p>
                 </div>
               </div>
               <div class="social-sharing clearfix border-top border-bottom mt-3">
@@ -112,6 +105,40 @@
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+        <div class="row" style="height: 45px; background-color: #f16c52; margin-top: 20px">
+          <h2 style="color: white">Sản phẩm liên quan</h2>
+        </div>
+        <div class="row"  *ngIf="foodList != undefined" >
+          <div class="col-4 col-md-4 col-lg-4 border-bottom" *ngFor="let food of foodList" style="margin-top: 30px">
+            <div class="main_product" >
+              <div class="product-thumbnail" style="height: 249px">
+                <a class="image_thumb" href="#" title="Cam Navel ruột vàng" style="height: 249px;">
+                  <img class="lazyload loaded" src="{{food.url}}" data-src="{{food.url}}" alt="Cam Navel ruột vàng" data-was-processed="true">
+                </a>
+                <div class="km"><span style="margin-right: 4px; color: white">KM</span></div>
+              </div>
+              <div class="product-info">
+                <div class="price-box">
+                  <p style="text-align: center;margin: 0"><span class="price" style="color: #eb7058">Giá: {{food.price}}₫ </span> <span class="compare-price" *ngIf="food.price!= food.comparePrice">{{food.comparePrice}}₫</span></p>
+
+                </div>
+                <h5 class="product-name" style="text-align: center">{{food.name}}</h5>
+              </div>
+
+            </div>
+            <div class="action" >
+              <div class="row">
+                <div class="col-3">
+                </div>
+                <div class="col-6">
+                  <button class="btn btn-primary" [routerLink]="['/detail/',food.idFood]">Xem chi tiết</button>
+
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>

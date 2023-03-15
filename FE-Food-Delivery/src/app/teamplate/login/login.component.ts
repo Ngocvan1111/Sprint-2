@@ -15,7 +15,7 @@ import {DataBinding} from "../../dto/data-binding";
 export class LoginComponent implements OnInit {
   signInForm: FormGroup = new FormGroup({});
   name: string | undefined;
-  dataBinding: DataBinding = {id:0, name: ''};
+  // dataBinding: DataBinding = {id:0, name: ''};
 
   constructor(private formBuilder: FormBuilder,
               private tokenService: TokenService,
@@ -36,9 +36,11 @@ export class LoginComponent implements OnInit {
         this.tokenService.setToken(data.token);
         this.tokenService.setEmail(data.email);
         this.tokenService.setId(data.id);
-        this.setValue(data.id, data.name)
-        this.dataBindingService.changeData(this.dataBinding);
-        this.router.navigateByUrl('/home');
+        this.tokenService.setIdCustomer(data.idCustomer);
+        // this.setValue(data.id, data.name)
+        this.dataBindingService.changeData("ok");
+        location.href = 'http://localhost:4200/home';
+        // this.router.navigateByUrl('/home');
         this.toastrService.success('Đăng nhập thành công.', 'Thông báo', {
           timeOut: 2000,
           progressBar: true,
@@ -72,9 +74,9 @@ export class LoginComponent implements OnInit {
       password: [''],
     })
   }
-  setValue(id: any, name: any){
-    this.dataBinding.id = id;
-    this.dataBinding.name = name;
-
-  }
+  // setValue(id: any, name: any){
+  //   this.dataBinding.id = id;
+  //   this.dataBinding.name = name;
+  //
+  // }
 }

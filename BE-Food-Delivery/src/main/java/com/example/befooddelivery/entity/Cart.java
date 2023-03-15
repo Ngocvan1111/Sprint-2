@@ -3,6 +3,7 @@ package com.example.befooddelivery.entity;
 import lombok.*;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Set;
 
@@ -18,6 +19,9 @@ public class Cart {
     private Long idCart;
     private int quantity;
     private String status;
+    private LocalDate createDate = LocalDate.now();
+    private LocalDate updateDate = LocalDate.now();
+    private boolean flagPayment = false;
 //    @ManyToMany()
 //    private List<Food> food;
     @OneToOne()

@@ -10,17 +10,27 @@ public class JwtResponse {
     private String type = "Bearer";
     private String name;
     private String email;
+    private Long idCustomer;
     private Collection<? extends GrantedAuthority> roles;
 
     public JwtResponse() {
     }
 
-    public JwtResponse(String token, String name, Collection<? extends GrantedAuthority> authorities, Long idAccount, String email) {
+    public JwtResponse(String token, String name, Collection<? extends GrantedAuthority> authorities, Long idAccount,Long idCustomer, String email) {
         this.token = token;
         this.name = name;
         this.roles = authorities;
         this.id = idAccount;
+        this.idCustomer = idCustomer;
         this.email = email;
+    }
+
+    public Long getIdCustomer() {
+        return idCustomer;
+    }
+
+    public void setIdCustomer(Long idCustomer) {
+        this.idCustomer = idCustomer;
     }
 
     public Long getId() {

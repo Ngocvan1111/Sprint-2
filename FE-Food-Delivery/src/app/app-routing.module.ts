@@ -5,6 +5,8 @@ import {LoginComponent} from "./teamplate/login/login.component";
 import {CartComponent} from "./teamplate/cart/cart.component";
 import {DetailComponent} from "./teamplate/detail/detail.component";
 import {ProductComponent} from "./teamplate/product/product.component";
+import {HeaderComponent} from "./teamplate/header/header.component";
+import {PaymentComponent} from "./teamplate/payment/payment.component";
 
 const routes: Routes = [
   {
@@ -20,8 +22,14 @@ const routes: Routes = [
     path: 'detail/:id', component: DetailComponent,
   },
   {
+    path: 'detail', component: DetailComponent,
+  },
+  {
     path: 'product', component: ProductComponent,
-  }
+  },
+  {
+    path: 'payment', component: PaymentComponent,
+  },
 ];
 
 @NgModule({
